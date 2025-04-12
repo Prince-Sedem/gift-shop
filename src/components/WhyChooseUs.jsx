@@ -5,6 +5,7 @@ const whyChooseUs = [
         "We handpick every item to ensure only the finest gifts reach your loved ones.",
       icon: "/icons/order.png",
       alt: "Quality",
+      bgColor: "bg-red-50",
     },
     {
       title: "Fast & Reliable Delivery",
@@ -12,6 +13,7 @@ const whyChooseUs = [
         "Timely delivery across the country so your gifts arrive just in time.",
       icon: "/icons/fast-delivery.png",
       alt: "Fast Delivery",
+      bgColor: "bg-yellow-50",
     },
     {
       title: "Excellent Customer Support",
@@ -19,6 +21,7 @@ const whyChooseUs = [
         "Our team is here to help with any questions or concerns, anytime.",
       icon: "/icons/support.png",
       alt: "Support",
+      bgColor: "bg-green-50",
     },
   ];
   
@@ -35,7 +38,7 @@ const whyChooseUs = [
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="p-6 bg-gray-50 rounded-lg shadow hover:shadow-md transition"
+                className={`p-6 ${item.bgColor} bg-gray-50 rounded-lg shadow hover:shadow-md transition`}
               >
                 <img
                   src={item.icon}
