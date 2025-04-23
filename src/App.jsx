@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { CartProvider } from "./context/CartContext"; // ✅ Import CartProvider
 import Navbar from "./components/Navbar";
 import Shop from "./pages/Shop";

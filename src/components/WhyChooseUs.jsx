@@ -1,6 +1,11 @@
+import React,{useEffect} from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 const whyChooseUs = [
     {
-      title: "Top Quality Products",
+      title: "We Design To Perfection",
       description:
         "We handpick every item to ensure only the finest gifts reach your loved ones.",
       icon: "/icons/order.png",
@@ -26,17 +31,27 @@ const whyChooseUs = [
   ];
   
   function WhyChooseUs() {
+        useEffect(() => {
+          AOS.init({
+            duration: 1000, // animation duration in ms
+            once: false,
+          });
+        }, []);
+
+
     return (
       <div>
         {/* Why Choose Us Section */}
         <section className="bg-white py-12 px-6 md:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+          <h2 data-aos="zoom-in"
+          className="text-3xl font-bold text-center text-gray-800 mb-10">
             Why Choose Us
           </h2>
   
           <div className="grid gap-8 md:grid-cols-3 text-center">
             {whyChooseUs.map((item, index) => (
               <div
+                data-aos="fade-up"
                 key={index}
                 className={`p-6 ${item.bgColor} bg-gray-50 rounded-lg shadow hover:shadow-md transition`}
               >

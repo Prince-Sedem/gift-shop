@@ -1,7 +1,9 @@
+import React,{useEffect} from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Sample product data
 const products = [
@@ -32,6 +34,14 @@ const products = [
   
 
 function Shop() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration in ms
+      once: false,
+    });
+  }, []);
+
+
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   // Filtered products based on category
@@ -40,7 +50,8 @@ function Shop() {
     : products.filter((product) => product.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div 
+    className="min-h-screen bg-gray-100 p-6">
       {/* Page Title */}
       <motion.h1
         className="text-3xl font-bold text-center text-gray-800 mb-6"
@@ -57,7 +68,7 @@ function Shop() {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-lg shadow-md text-sm sm:text-base text-gray-700 ${
+            className={`px-4 py-2 rounded-lg  shadow-md text-sm sm:text-base text-gray-700 ${
               selectedCategory === category ? "bg-blue-600 text-white" : "bg-white"
             } transition duration-300`}
           >
@@ -73,9 +84,11 @@ function Shop() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        {filteredProducts.map((product) => (
+        {filteredProducts.map((product, index) => (
           <Link to={`/product/${product.id}`} className="block h-full">
             <motion.div
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               key={product.id}
               className="flex flex-col h-full bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition transform hover:scale-105"
               whileHover={{ scale: 1.05 }}
@@ -91,7 +104,7 @@ function Shop() {
                 <h2 className="text-lg font-bold text-gray-800">{product.name}</h2>
                 <p className="text-gray-600">₵{product.price}</p>
               </div>
-              <button className="mt-4 px-4 py-2 bg-gradient-to-r from-black to-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700">
+              <button className="mt-4 px-4 py-2 bg-gradient-to-r from-black to-blue-600 text-white rounded-bl-xl rounded-tr-xl shadow-md hover:bg-blue-700">
                 View Details
               </button>
             </motion.div>

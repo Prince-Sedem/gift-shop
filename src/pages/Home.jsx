@@ -30,10 +30,10 @@ function Home() {
             src={images[currentIndex]}
             alt="Slider"
             className="absolute w-full h-full object-cover mt-16"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 2 }}
           />
         </AnimatePresence>
         {/* Overlay */}
@@ -63,7 +63,7 @@ function Home() {
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Link to="/shop" className="px-6 py-3 bg-gradient-to-r from-black to-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700">
+          <Link to="/shop" className="px-6 py-3 bg-gradient-to-r from-black to-blue-600 text-white rounded-bl-xl rounded-tr-xl shadow-lg hover:bg-blue-700">
             Shop Now
           </Link>
         </motion.div>

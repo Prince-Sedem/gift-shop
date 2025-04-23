@@ -1,6 +1,17 @@
+import React,{useEffect} from "react";
 import { motion } from "framer-motion";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function About() {
+    useEffect(() => {
+      AOS.init({
+        duration: 1000, // animation duration in ms
+        once: false,
+      });
+    }, []);
+
+
   return (
     <div className="py-16 px-6 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -14,6 +25,8 @@ function About() {
             src="/images/pexels-pavel-danilyuk-6764321.jpg" // Replace with your image path
             alt="About Us"
             className="rounded-2xl shadow-lg w-full h-auto object-cover"
+            data-aos="fade-up"
+
           />
         </motion.div>
 
@@ -23,15 +36,17 @@ function About() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-20">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">About Us</h2>
+          <div data-aos="fade-up">  
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">About Us</h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                At <span className="font-semibold text-blue-600">Sem’s Gifts & More</span>, we believe that every gift tells a story.
-                Our passion is curating thoughtful gift collections that bring joy, celebrate love, and create lasting memories.
-                Whether you're celebrating a birthday, anniversary, or just want to show appreciation — we’re here to help you do it beautifully.
+                <span className="font-semibold text-blue-600">Sem’s Gifts & More</span> is a gift and event company that specializes in creating hampers, 
+                customized gift items, occasional cakes, catering services, and breakfast/brunch for every occasion. We provide the perfect gifts and services for both corporate clients and individuals.
+                Our gift baskets and boxes are well designed and beautifully packaged to suit every class in society.
               </p>
               <p className="text-gray-600 text-lg mt-4 leading-relaxed">
-                With a variety of premium boxes, fresh flowers, trendy accessories, and delightful treats — our mission is to make gift-giving easier, more meaningful, and a whole lot more fun.
+              We provide customized and personalized gift boxes featuring your company logo, adding a touch of class when your clients receive them.
+              We design with perfection, pay close attention to detail, and specialize in customized business gifts and services.
+              Our collection includes a fantastic range of high-quality gifts at excellent prices.
               </p>
           </div>
         </motion.div>

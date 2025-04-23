@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 
+
 const products = [
     { id: 1, name: "Luxury Gift Box", price: 30, image: "/images/giftbox1.png", description: "A beautifully crafted luxury gift box." },
     { id: 2, name: "Surprise Box", price: 25, image: "/images/giftbox2.png", description: "A surprise box filled with exciting goodies!" },
@@ -46,11 +47,11 @@ function ProductDetail() {
       <div className="mt-4 flex gap-3">
           <button
             onClick={() => addToCart(product)}
-            className="mt-4 px-6 py-3 bg-gradient-to-r from-black to-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+            className="mt-4 px-6 py-3 bg-gradient-to-r from-black to-blue-600 text-white rounded-bl-xl rounded-tr-xl shadow-md hover:bg-blue-700"
           >
             Add to Cart
           </button>
-          <Link to="/shop" className="mt-4 px-6 py-3 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400">
+          <Link to="/shop" className="mt-4 px-6 py-3 bg-gray-300 text-gray-800 rounded-bl-xl rounded-tr-xl hover:bg-gray-400">
                 Back to Shop
           </Link>
       </div>
