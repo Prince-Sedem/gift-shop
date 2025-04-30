@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import HomeList from "./components/HomeList";
 import Footer from "./components/Footer";
+import GalleryList from "./components/GalleryList";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/gallery" element={<GalleryList />} />
         </Routes>
         <Footer />
       </Router>

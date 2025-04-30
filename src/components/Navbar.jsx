@@ -26,6 +26,9 @@ function Navbar() {
             <Link to="/shop" className="text-gray-700 hover:text-blue-500">
               Shop
             </Link>
+            <Link to="/gallery" className="text-gray-700 hover:text-blue-500">
+              Gallery
+            </Link>
           </div>
 
           {/* Cart always visible */}
@@ -69,6 +72,9 @@ function Navbar() {
             </Link>
             <Link to="/shop" className="block text-gray-700 hover:text-blue-500">
               Shop
+            </Link>
+            <Link to="/gallery" className="block text-gray-700 hover:text-blue-500">
+              Gallery
             </Link>
           </div>
         </motion.div>
